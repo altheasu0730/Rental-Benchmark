@@ -248,8 +248,7 @@ details td,details th{white-space:normal}
       </div>
       <div class="tabs" role="tablist" aria-label="Applications">
         <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">1 · Benchmark Explorer</button>
-        <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">2 · Listing Screening</button>
-        <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">3 · Screen New Listings</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">2 · Screen New Listings</button>
       </div>
     </div>
   </div>
@@ -275,7 +274,7 @@ details td,details th{white-space:normal}
       </div>
       <div class="card" id="t1-detail"></div>
     </div>
-    <p class="note">To score your own current listings, upload a CSV in tab 3.</p>
+    <p class="note">To score your own current listings, upload a CSV in tab 2.</p>
   </section>
 
   <!-- TAB 2 -->
@@ -866,7 +865,7 @@ function initTab2(){
 }
 const HIST={old:'Historical benchmark based on 2018–2019 U.S. apartment listings (advertised asking rents, not signed leases or current market values).',now:'Current listings scored with the 2018–2019 model, adjusted to September 2026 rent levels with the BLS rent index and local calibration. Benchmarks are reference ranges, not valuations.'};
 function showTab(n){$$('.tab').forEach(t=>t.setAttribute('aria-selected',t.id==='tab-'+n));[1,2,3].forEach(k=>$('#panel-'+k).hidden=n!==k);$('#hist').textContent=n===3?HIST.now:HIST.old}
-$('#tab-1').onclick=()=>showTab(1);$('#tab-2').onclick=()=>showTab(2);$('#tab-3').onclick=()=>showTab(3);
+$('#tab-1').onclick=()=>showTab(1);$('#tab-3').onclick=()=>showTab(3);
 t1Init();initTab2();t3Init();
 </script>
 
